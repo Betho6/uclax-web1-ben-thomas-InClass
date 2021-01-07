@@ -7,7 +7,7 @@ const Main = () => {
 
     return (
         <div className='Main'>
-        <h1>Ben's in Class</h1>
+        <h1>Ben's in Class Projct</h1>
         </div>
     );
 }
