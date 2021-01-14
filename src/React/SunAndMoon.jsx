@@ -13,7 +13,8 @@ const imageOut =( ) => {
         <div>The Sun and The Moon
             <img src={ imageSrc }
             onMouseOver={imageOver}
-            onMouseOut={imageOut}/>
+            onMouseOut={imageOut}
+            />
         </div>
     )
 }
