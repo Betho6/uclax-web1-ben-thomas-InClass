@@ -1,6 +1,6 @@
 import react, {useState} from 'react';
 
-const SunAndMoon =() => {
+const Login =() => {
     const [imageSrc, imageSrcUpdate] = useState ('/assets/img/moon.png');
 
 const imageOver =( ) => {
@@ -20,4 +20,4 @@ const imageOut =( ) => {
     )
 }
 
-export default SunAndMoon;
+export default Login;
