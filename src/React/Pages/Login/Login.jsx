@@ -1,4 +1,4 @@
-import react from 'react';
+import React from 'react';
 
 /* Components ---------------------------*/
 import LoginForm from './LoginForm'

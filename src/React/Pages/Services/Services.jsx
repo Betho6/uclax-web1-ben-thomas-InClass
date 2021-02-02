@@ -1,5 +1,4 @@
 import React from 'react';
-import Slideshow from '../Welcome/Slideshow';
 
 /* Componets------*/
 import FilterNav from './FilterNav'
