@@ -1,11 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const FilterNav = () => {
+/* Components ---------------------------*/
+import FilterNavButton from './FilterNavButton.jsx'
+
+const FilterNav = ({ services }) => {
+    console.log ('FilterNav services', services);
+
 
     return (
         <FilterNavStyled className='FilterNav'>
             FilterNav 
+            <FilterNavButton />
         </FilterNavStyled>
     );
 }

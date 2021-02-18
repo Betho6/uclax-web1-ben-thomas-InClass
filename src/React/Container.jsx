@@ -37,7 +37,8 @@ const Container = () => {
 export default Container;
 
 const ContainerStyled = styled.div`
-    background-color: pink;
+   
+   /* background-color: pink;
     
     @media ${mq.tablet} {
     background-color: yellow ;  
@@ -48,5 +49,5 @@ const ContainerStyled = styled.div`
     } 
     @media ${mq.ultrawide} {
     background-color: red ;  
-    } 
+    } */
     `;

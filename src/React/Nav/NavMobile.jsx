@@ -12,7 +12,6 @@ const [showMobileMenu, showMobileMenuUpdate] = useState(false);
 
 const handleHamburgerToggle = () => {
     showMobileMenuUpdate(!showMobileMenu);
-    console.log( 'you clicked me. ', showMobileMenu);
 }
     return (
         <NavMobileStyled className='NavMobile'>

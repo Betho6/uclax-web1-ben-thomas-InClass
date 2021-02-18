@@ -1,14 +1,20 @@
 import React from 'react';
 
+/* Scripts ---------------------------*/
+import { services } from './servicesData.js';
+
 /* Componets------*/
-import FilterNav from './FilterNav'
-import Gallery from './Gallery'
+// import FilterNav from './FilterNav/FilterNav.jsx';
+import Gallery from './Gallery/Gallery.jsx';
 
 const Services =() => {
+
+
+    console.log('services', services);
     return (
         <div>
             <h1>Services</h1>
-            <FilterNav />
+            {/* <FilterNav services={ services } /> */}
             <Gallery />
         </div>
     );
