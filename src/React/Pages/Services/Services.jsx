@@ -1,21 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 /* Scripts ---------------------------*/
 import { services } from './servicesData.js';
 
 /* Componets------*/
-// import FilterNav from './FilterNav/FilterNav.jsx';
+import FilterNav from './FilterNav/FilterNav.jsx';
 import Gallery from './Gallery/Gallery.jsx';
 
 const Services =() => {
+    const [catChosen, catChosenUpdate] = useState('Massage');
 
-
-    console.log('services', services);
     return (
         <div>
             <h1>Services</h1>
-            {/* <FilterNav services={ services } /> */}
-            <Gallery />
+            <FilterNav 
+                services={  services } 
+                catChosen={ catChosen } 
+                catChosenUpdate={ catChosenUpdate }/> 
+            <Gallery 
+                services= { services } 
+                catChosen={ catChosen } />
         </div>
     );
 }

@@ -4,8 +4,8 @@ import styled from 'styled-components';
 /* Components ---------------------------*/
 import FilterNavButton from './FilterNavButton.jsx'
 
-const FilterNav = ({ services }) => {
-    console.log ('FilterNav services', services);
+const FilterNav = ({ services, catChosen, catChosenUpdate }) => {
+    console.log ('FilterNav services', services, catChosen);
 
 
     return (
