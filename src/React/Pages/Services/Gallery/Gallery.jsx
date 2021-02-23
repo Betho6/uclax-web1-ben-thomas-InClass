@@ -1,12 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
+/* Components ---------------------------*/
 import GalleryItem from './GalleryItem.jsx';
 
-/* Interesting ---------------------------*/
-//import {services} from '../../Services/servicesData.js';
-
-const Gallery = ({services, catChosen, catChosenUpdate}) => {
+const Gallery = ({services, catChosen }) => {
     
     return (
         <GalleryStyled className='Gallery'>
@@ -15,11 +13,11 @@ const Gallery = ({services, catChosen, catChosenUpdate}) => {
                 .filter((item) =>{
                     return (item.category === 'All' || catChosen)
                 })
+
                 .map((item, idx) => {  
                     return <GalleryItem key={ idx } item= {item} />
                 })
             }
-            <GalleryItem /> 
         </GalleryStyled>
     );
 }
