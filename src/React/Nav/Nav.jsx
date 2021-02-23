@@ -11,6 +11,7 @@ const Nav =() => {
             <NavLink to="/services">Services</NavLink>
             <NavLink to="/contact">Contact</NavLink>
             <NavLink to="/login">Login</NavLink>
+            <NavLink to="/Essay">Essay</NavLink>
         </NavStyled>
     );
 }
