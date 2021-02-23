@@ -8,7 +8,7 @@ import FilterNav from './FilterNav/FilterNav.jsx';
 import Gallery from './Gallery/Gallery.jsx';
 
 const Services =() => {
-    const [catChosen, catChosenUpdate] = useState('All');
+    const [catChosen, catChosenUpdate] = useState ('Massage');
 
     return (
         <div>

@@ -10,13 +10,14 @@ const Gallery = ({services, catChosen }) => {
         <GalleryStyled className='Gallery'>
             {
                 services.packages
-                .filter((item) =>{
-                    return (item.category === 'All' || catChosen)
-                })
+                    .filter((item) =>{
+                        console.log('item.category', item.category);
 
-                .map((item, idx) => {  
-                    return <GalleryItem key={ idx } item= {item} />
-                })
+                        return (catChosen === 'All' || item.category === catChosen)
+                    })
+                    .map((item, idx) => {  
+                        return <GalleryItem key={ idx } item= {item} />
+                    })
             }
         </GalleryStyled>
     );
@@ -26,7 +27,6 @@ export default Gallery;
 
 const GalleryStyled = styled.div`
 display: flex;
-
 flex-wrap: wrap;
 justify-content:center;
     
