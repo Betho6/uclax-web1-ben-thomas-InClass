@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 
 /* Script ---------------------------*/
@@ -9,12 +9,31 @@ import Lightbox from '../../../Shared/Lightbox/LightBox.jsx';
 
 
 const StaffMember = ({member}) => {
+    const [showLightbox, showLightboxUpdate] = useState (false)
+    
+    const handleOnHide = () => {
+        showLightboxUpdate(false);
+    }
 
+    const handleOnShow = () => {
+        showLightboxUpdate(true);
+    }
+    
     return (
         <StaffMemberStyled className='StaffMember'>
-            <img src={ member.image } />
-            <h3>{member.name}</h3>
-            <Lightbox />
+            <div class='piece' onClick= { handleOnShow }>           
+                <img src={ member.image } />
+                <h3>{member.name}</h3>
+            </div>
+            
+            <Lightbox 
+                show= { showLightbox }
+                onHide={ handleOnHide }
+                width= '200px'
+            >
+                <img src={ member.image } />
+                <h3>{member.name}</h3>
+            </Lightbox>
         </StaffMemberStyled>
     );
 }
