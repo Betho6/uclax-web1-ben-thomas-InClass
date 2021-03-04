@@ -22,7 +22,7 @@ const StaffMember = ({member}) => {
     return (
         <StaffMemberStyled className='StaffMember'>
             <div class='piece' onClick= { handleOnShow }>           
-                <img src={ member.image } />
+                <img src={ member.image } alt={member.name} />
                 <h3>{member.name}</h3>
             </div>
             
@@ -31,7 +31,7 @@ const StaffMember = ({member}) => {
                 onHide={ handleOnHide }
                 width= '200px'
             >
-                <img src={ member.image } />
+                <img src={ member.image } alt={member.name} />
                 <h3>{member.name}</h3>
             </Lightbox>
         </StaffMemberStyled>

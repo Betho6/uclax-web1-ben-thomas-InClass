@@ -14,8 +14,8 @@ const Field = ({theField, handleFieldUpdate}) => {
             FieldComponent = Textarea;
             break;
         default:
-                FieldComponent = Input;
-                break;
+            FieldComponent = Input;
+            break;
     }
 
     const handleOnChange = (event) =>{
