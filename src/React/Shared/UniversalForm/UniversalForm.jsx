@@ -5,11 +5,11 @@ import styled from 'styled-components';
 import Button from './Button.jsx'
 import FieldGroup from './FieldGroup/FieldGroup.jsx'
 
-/* Scriots ---------------------------*/
-
+/* Scripts ---------------------------*/
 import {isValidEmail} from '../../../common/utilities.js'
+import API from '../../../common/API.js';
 
-const UniversalForm = ({fields}) => {
+const UniversalForm = ({fields, submitText, apiURL}) => {
 
     const [theFields, theFieldsUpdate] = useState(fields);
 
@@ -43,9 +43,6 @@ const UniversalForm = ({fields}) => {
             errors: errors,
         }
 
-        console.log('validatedField', validatedField);
-
-
         /* Update Fields ---------------------------*/
         const newFields = theFields.map((field) => {
             return (field.id === validatedField.id) ? validatedField :field;
@@ -55,11 +52,42 @@ const UniversalForm = ({fields}) => {
         theFieldsUpdate(newFields);
     }
 
+        const handleFormSubmit = (event) => {
+            event.preventDefault();
+
+            //check have they passed validation
+            const hasErrors = theFields.find(field =>{
+                return (field.errors && field.errors.length > 0);
+            });
+
+            if (!hasErrors) {
+                console.log('Ready to Submit Data', theFields);
+
+                API.post(apiURL, theFields).then((response) => {
+                    console.log('repsonse', response);
+            });
+            
+            }
+
+
+        }
+
     return (
-        <UniversalFormStyled className='UniversalForm'>
-            <FieldGroup id='email' theFields= {theFields} handleFieldUpdate= { handleFieldUpdate} />
-            <FieldGroup id= 'message' theFields= {theFields} handleFieldUpdate= { handleFieldUpdate} />
-            <Button> Send Email</Button>
+        <UniversalFormStyled 
+            className='UniversalForm'
+            onSubmit={ handleFormSubmit}>
+
+            {
+            theFields.map((theField, idx)=> {
+                return <FieldGroup 
+                    key={ idx }
+                    id={ theField.id}
+                    theFields={ theFields }
+                    handleFieldUpdate={ handleFieldUpdate}
+                    />
+            })
+            }
+            <Button type="submit"> {submitText} </Button>
         </UniversalFormStyled>
     );
 }
